@@ -8,11 +8,13 @@ import { Provider } from 'react-redux'; // eslint-disable-line no-unused-vars
 import { App } from './app';
 import { reducer } from './reducer';
 
-const initialState = {}
+const initialState = {};
 
-export const store = createStore(reducer, initialState, compose(
-  window.devToolsExtension ? window.devToolsExtension() : f => f
-));
+export const store = createStore(
+    reducer,
+    initialState,
+    compose(window.devToolsExtension ? window.devToolsExtension() : (f) => f)
+);
 
 const render = () => {
     ReactDOM.render(
@@ -20,7 +22,7 @@ const render = () => {
             <App />
         </Provider>,
         document.getElementById('root')
-    )
-}
+    );
+};
 
 render();
